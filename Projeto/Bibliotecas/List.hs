@@ -143,8 +143,8 @@ diff x l = cataList (either nil (g l)) x
 
 chunksOf' :: Int -> [a] -> [[a]]
 chunksOf' n = anaList (g n) where
-          g 0 = i1 . (!)
-          g n = i2 . split (take n) (drop n)
+          g n [] = i1()
+          g n x = i2(take n x,drop n x)
 
 nest = chunksOf'
 
